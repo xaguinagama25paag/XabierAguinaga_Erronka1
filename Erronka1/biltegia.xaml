@@ -1,0 +1,27 @@
+﻿<Window x:Class="Erronka1.biltegia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Erronka1"
+        mc:Ignorable="d"
+        Title="biltegia" Height="450" Width="800">
+    <Grid>
+        <local:Kalkulagaiua Margin="611,10,10,269" x:Name="kalku"/>
+        <ListBox Margin="67,332,619,0" x:Name="produktuak" SelectionChanged="produktu_SelectionChanged">
+        </ListBox>
+        <ListBox  Margin="227,332,10,0" x:Name="produktu" SelectionChanged="produktu_SelectionChanged_1" />
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Click="salir_Click" x:Name="salir"/>
+        <Button Content="ATV" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Click="biltegira_Click" x:Name="biltegira"/>
+        <DataGrid Margin="67,41,295,143" x:Name="lista" SelectedIndex="-1">
+            <DataGrid.Columns>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Editatu erabiltzailea" HorizontalAlignment="Left" Margin="520,217,0,0" VerticalAlignment="Top" Click="editatu"/>
+        <Button Content="Sortu erabiltzailea" HorizontalAlignment="Left" Margin="520,192,0,0" VerticalAlignment="Top" Click="sortu"/>
+        <Button Content="Ezabatu erabiltzailea" HorizontalAlignment="Left" Margin="520,242,0,0" VerticalAlignment="Top" Click="ezabatu"/>
+
+    </Grid>
+</Window>

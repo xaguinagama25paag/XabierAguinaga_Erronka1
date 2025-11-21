@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  erronka_datubase:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./addons:/mnt/extra-addons # Carpeta para los módulos personalizados
+      - ./odoo.conf:/etc/odoo/odoo.conf # Archivo de configuración de Odoo
+    environment:
+      - MYSQL_ROOT_PASSWORD=zubiri123
+volumes:
+  pg_data:
