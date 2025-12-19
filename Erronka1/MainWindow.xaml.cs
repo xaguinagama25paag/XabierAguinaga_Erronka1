@@ -50,22 +50,17 @@ namespace Erronka1
             }
         }
 
-        private void biltegira_Click(object sender, RoutedEventArgs e)
+        private void mahaiera_Click(object sender, RoutedEventArgs e)
         {
-            if ("Administrador" == datubasea.getKontuaId(ide).Rol)
-            {
-                var window = new biltegia(ide);
-                datubasea.itxiKonekxioa();
-                this.Close();
-                window.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Ez daukazu beharrezko baimenak biltegira joateko");
-            }
-
-
+            var window = new Erreserbak(ide);
+            datubasea.itxiKonekxioa();
+            this.Close();
+            window.ShowDialog();
         }
+
+
+
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

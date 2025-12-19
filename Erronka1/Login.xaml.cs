@@ -35,10 +35,21 @@ namespace Erronka1
             if (erabiltzailea.Id!=-1)
             {
                 MessageBox.Show("Kaixo "+erabiltzailea.Nombre);
-                var window = new MainWindow(erabiltzailea.Id);
+                
+                if (erabiltzailea.Rol=="Usuario")
+                {
+                    var window = new MainWindow(erabiltzailea.Id);
+                    this.Close();
+                    window.ShowDialog();
+
+                }
+                else
+                {
+                    var window = new biltegia(erabiltzailea.Id);
+                    this.Close();
+                    window.ShowDialog();
+                }
                 datubasea.itxiKonekxioa();
-                this.Close();
-                window.ShowDialog();
                 
             }
             else

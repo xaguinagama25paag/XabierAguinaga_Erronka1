@@ -140,6 +140,14 @@ namespace Erronka1
             window.ShowDialog();
 
         }
+
+        private void sortuProduktu(object sender, RoutedEventArgs e)
+        {
+            var window = new ProduktuAdmin(0,ide);
+            this.Close();
+            window.ShowDialog();
+
+        }
         private void ezabatu(object sender, RoutedEventArgs e)
         {
             if (lista.SelectedIndex != -1)

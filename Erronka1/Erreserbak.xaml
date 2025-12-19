@@ -1,0 +1,25 @@
+﻿<Window x:Class="Erronka1.Erreserbak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Erronka1"
+        mc:Ignorable="d"
+        Title="Erreserbak" Height="450" Width="800">
+    <Grid>
+        <Button Content="TPV" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Click="tpv_Click" x:Name="tpv" Width="52" Height="21"/>
+
+        <local:Erreserba HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" x:Name="mahai1" Id="0"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="174,177,0,0" VerticalAlignment="Top" x:Name="mahai2" Id="1"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="333,177,0,0" VerticalAlignment="Top" x:Name="mahai3" Id="2"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="499,177,0,0" VerticalAlignment="Top" x:Name="mahai4" Id="3"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="660,177,0,0" VerticalAlignment="Top" x:Name="mahai5" Id="4"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Height="36" x:Name="mahai6" Hartua="1" Id="5"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="174,258,0,0" VerticalAlignment="Top" Height="36" Width="130" x:Name="mahai7" Hartua="1" Id="6"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="333,258,0,0" VerticalAlignment="Top" Height="36" Width="130" x:Name="mahai8" Hartua="0" Id="7"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="499,258,0,0" VerticalAlignment="Top" Height="36" Width="130" x:Name="mahai9" Hartua="0" Id="8"/>
+        <local:Erreserba HorizontalAlignment="Left" Margin="660,258,0,0" VerticalAlignment="Top" Height="31" Width="130" x:Name="mahai10" Hartua="0" Id="9"/>
+        <TextBlock HorizontalAlignment="Left" Margin="345,48,0,0" TextWrapping="Wrap" Text="Erreserbak" VerticalAlignment="Top" Height="24" Width="66"/>
+
+    </Grid>
+</Window>

@@ -82,6 +82,21 @@ namespace Erronka1
                 return i;
             }
         }
+        public int getHighIdArt()
+        {
+            string query = "SELECT max(id) FROM articulos";
+            int i = 0;
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    i = (int)reader["max(id)"];
+                }
+                reader.Close();
+                return i;
+            }
+        }
         public Erabiltzaile getKontua(string izen, string pasahitz)
         {
             string query = "SELECT * FROM usuarios WHERE nombre="+ '"'+izen + '"' + " AND contraseña=" +'"'+pasahitz +'"';
@@ -134,6 +149,24 @@ namespace Erronka1
                 return erabiltzailea;
             }
         }
+        public List<Mahaia> getMahaiak()
+        {
+            string query = "SELECT * FROM mahaiak";
+            int i = 0;
+            List<Mahaia> mahaiLista;
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+
+            {
+                reader = cmd.ExecuteReader();
+                mahaiLista = new List<Mahaia>(10);
+                while (reader.Read())
+                {
+                    mahaiLista.Add( new Mahaia() { id = (int)reader["id"], erreserbatuta = (int)reader["hartuta"] });
+                }
+                reader.Close();
+                return mahaiLista;
+            }
+        }
         public int updateStock(int id, int stock)
         {
             string query = "UPDATE articulos SET stock=" + '"' + stock + '"' + " WHERE id=" + '"' + id + '"';
@@ -145,6 +178,14 @@ namespace Erronka1
         public int updateUser(Erabiltzaile erabiltzailea)
         {
             string query = "UPDATE usuarios SET nombre=" + '"' + erabiltzailea.Nombre + '"' + ", contraseña=" + '"' + erabiltzailea.Contraseña + '"'+", rol=" +'"'+ erabiltzailea.Rol +'"' + " WHERE id=" + erabiltzailea.Id;
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                return cmd.ExecuteNonQuery();
+            }
+        }
+        public int updateMahaia(int id, int hartuta)
+        {
+            string query = "UPDATE mahaiak SET hartuta=" + '"' + hartuta + '"' + " WHERE id=" + id;
             using (MySqlCommand cmd = new MySqlCommand(query, connection))
             {
                 return cmd.ExecuteNonQuery();
@@ -166,10 +207,24 @@ namespace Erronka1
                 return cmd.ExecuteNonQuery();
             }
         }
+
+        public int sortuProduktu(Articulos artikulo)
+        {
+            string query = "INSERT INTO articulos VALUES (" + (getHighIdArt() + 1) + ", " + '"' + artikulo.Articulo + '"' + ", " + '"' + artikulo.Precio + '"' + ", " + '"' + artikulo.Tipo + '"' + ", " + '"' + artikulo.Stock + '"'+")";
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                return cmd.ExecuteNonQuery();
+            }
+        }
+
+
         public void itxiKonekxioa()
         {
             connection.Close();
         }
+
+
+
         public class Erabiltzaile
         {
             public int Id { get; set; }

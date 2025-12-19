@@ -12,7 +12,6 @@
         </ListBox>
         <ListBox  Margin="227,332,10,0" x:Name="produktu" SelectionChanged="produktu_SelectionChanged_1" />
         <Button Content="Salir" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Click="salir_Click" x:Name="salir"/>
-        <Button Content="ATV" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Click="biltegira_Click" x:Name="biltegira"/>
         <DataGrid Margin="67,41,295,143" x:Name="lista" SelectedIndex="-1">
             <DataGrid.Columns>
 
@@ -22,6 +21,7 @@
         <Button Content="Editatu erabiltzailea" HorizontalAlignment="Left" Margin="520,217,0,0" VerticalAlignment="Top" Click="editatu"/>
         <Button Content="Sortu erabiltzailea" HorizontalAlignment="Left" Margin="520,192,0,0" VerticalAlignment="Top" Click="sortu"/>
         <Button Content="Ezabatu erabiltzailea" HorizontalAlignment="Left" Margin="520,242,0,0" VerticalAlignment="Top" Click="ezabatu"/>
+        <Button Content="Sortu produktua" HorizontalAlignment="Left" Margin="227,307,0,0" VerticalAlignment="Top" Click="sortuProduktu"/>
 
     </Grid>
 </Window>
